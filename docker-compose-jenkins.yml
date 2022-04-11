@@ -9,7 +9,7 @@ services:
       - 8085:8080
       - 50003:50000
     volumes:
-      - ./jenkins:/var/jenkins_home
+      #- ./jenkins:/var/jenkins_home
       - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
-      - /home/${myname}/jenkins_compose/jenkins_configuration:/var/jenkins_home
+      - /home/jenkins_compose/jenkins_configuration:/var/jenkins_home
