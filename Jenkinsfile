@@ -6,7 +6,9 @@ pipeline {
 	
         stage('Integration Test') {
 		 steps {
-                sh " docker-compose -f docker-compose.yml up "
+                sh "cd /home/jenkins_compose/jenkins_configuration"
+                sh "ls"
+                //sh " docker-compose -f docker-compose.yml up "
               
            	 }
 
