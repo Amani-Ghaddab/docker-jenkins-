@@ -10,5 +10,5 @@ services:
       - 50003:50000
     volumes:
       - ./jenkins:/var/jenkins_home
-      - ${DOCKER_PATH}:/usr/bin/docker:ro
+      - /usr/bin/docker:/usr/bin/docker
       - /var/run/docker.sock:/var/run/docker.sock
