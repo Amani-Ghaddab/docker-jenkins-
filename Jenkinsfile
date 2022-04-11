@@ -6,7 +6,7 @@ pipeline {
 	
         stage('Integration Test') {
 		 steps {
-                sh "${which docker} docker-compose -f docker-compose.yml up "
+                sh " docker-compose -f docker-compose.yml up "
               
            	 }
 
