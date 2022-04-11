@@ -6,7 +6,7 @@ pipeline {
 	
         stage('Integration Test') {
 		 steps {
-                sh "DOCKER_PATH=$(which docker) docker-compose -f docker-compose.yml up --force-recreate --abort-on-container-exit"
+                sh "DOCKER_PATH=$(which docker) docker-compose -f docker-compose.yml up "
               
            	 }
 
