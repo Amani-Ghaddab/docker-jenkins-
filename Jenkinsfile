@@ -1,5 +1,6 @@
 @Library('pipeline-library') _
-pipeline(
+pipeline( 
+    name:amani
    // scmurl:'https://github.com/Amani-Ghaddab/docker-jenkins-.git'
 
 )
