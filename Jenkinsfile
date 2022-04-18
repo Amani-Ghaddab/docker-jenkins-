@@ -1,4 +1,4 @@
-@Library('pipeline-library') _
+@Library('pipeline_library') _
 test( 
   // name:'amani'
    scmurl:'https://github.com/Amani-Ghaddab/docker-jenkins-.git'
