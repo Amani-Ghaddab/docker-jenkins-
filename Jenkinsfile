@@ -1,18 +1,5 @@
-pipeline {
-    agent any
-
-    stages {
-       
-	
-        stage('Integration Test') {
-		 steps {
-               sh " docker-compose -f docker-compose.yml up "
-              
-           	 }
-
-
-            }
-	
-        
-    }
-}
+@Library('-pipeline-library') _
+pipeline(
+    scmurl:https://github.com/Amani-Ghaddab/docker-jenkins-.git
+    
+)
