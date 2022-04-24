@@ -4,5 +4,5 @@ gitCheckout(
 
 )
 dockerBuild(
-  dockerfileLocation: ./mvc/dockerfile
+  dockerfileLocation: mvc/dockerfile
 )
