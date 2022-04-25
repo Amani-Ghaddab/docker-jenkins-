@@ -6,3 +6,6 @@ gitCheckout(
 dockerBuild(
   dockerfileLocation: './mvc/dockerfile'
 )
+dockerComposeUp(
+  dockerComposLocation : '/user/local/bin/docker-compose'
+)
