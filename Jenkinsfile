@@ -7,5 +7,5 @@ dockerBuild(
   dockerfileLocation: './mvc/dockerfile'
 )
 dockerComposeUp(
-  dockerComposLocation : '/user/local/bin/docker-compose'
+  dockerComposLocation : '/usr/local/bin/docker-compose'
 )
