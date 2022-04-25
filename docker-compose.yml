@@ -20,9 +20,9 @@ services:
     image: nginx:alpine
     container_name: nginx_deploy_test
     volumes:
-      - "./nginx.conf:/etc/nginx/nginx.conf:ro"
+      - "./nginx.conf:/etc/nginx/nginx.d:ro"
     ports:
-      - "4000:80"
+      - "4001:80"
     networks:
       - app-network
     restart : always
