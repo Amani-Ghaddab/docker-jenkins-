@@ -9,18 +9,18 @@ USER appuser
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["MVC.csproj", "./"]
-RUN dotnet restore "MVC.csproj"
+COPY ["DeployTest.csproj", "./"]
+RUN dotnet restore "DeployTest.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "MVC.csproj" -c Release -o /app/build
+RUN dotnet build "DeployTest.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish  "MVC.csproj" -c Release -o /app/publish
+RUN dotnet publish  "DeployTest.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 #When you opt-out this allows the container to run as readonly
 ENV COMPlus__EnableDiagnostics=0 
-ENTRYPOINT ["dotnet", "MVC.dll"]
+ENTRYPOINT ["dotnet", "DeployTest.dll"]
