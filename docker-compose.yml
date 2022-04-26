@@ -8,11 +8,12 @@ services:
     volumes:
       - ./:/var/www
     tty: true
-    expose :
-      - "5000"
+    ports:
+      - "80:5000"
     restart : always
     networks:
       - app-network
+
     depends_on:
       - nginx
   nginx:
