@@ -23,7 +23,7 @@ services:
        - ./:/var/www
        - "./nginx.conf:/etc/nginx/nginx.conf:ro" #ro:read only
     ports:
-      - "4001:80"
+      - "4005:80"
     networks:
       - app-network
     restart : always
