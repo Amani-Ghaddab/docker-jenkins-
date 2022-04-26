@@ -1,38 +1,41 @@
-version: '3.7'
+version: "3.7"
 services:
-  projet:
-    build:
-      context : ./mvc/
-      dockerfile : dockerfile
-    container_name: Front_deploy_test
+
+#dotnet service
+  frontend:
+    build: 
+       context : ./MVC/
+       dockerfile : dockerfile
+    container_name: app
     volumes:
-      - ./:/var/www
-    tty: true
+       - ./:/var/www
+    depends_on:
+      - reversproxy
+    tty: true        # docker run -t
     ports:
       - "80:5000"
+   #  expose :
+     #  - "5000"
     restart : always
     networks:
       - app-network
 
-    depends_on:
-      - nginx
-  nginx:
+#nginx server 
+  reversproxy:
     image: nginx:alpine
-    container_name: nginx_deploy_test
     volumes:
-      - "./nginx.conf:/etc/nginx/nginx.d:ro"
+      - ./:/var/www
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro" #ro:read only
     ports:
       - "4001:80"
+    tty: true
+    restart : always
     networks:
       - app-network
-    restart : always
+
 #Docker Networks
-#connexion entre les conatainers
 networks:
+  app-network:
+    driver: bridge
 
- app-network:
-
-  driver: bridge
-
-
-
+  
