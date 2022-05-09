@@ -6,9 +6,8 @@ gitCheckout(
 dockerComposeUp(
   dockerComposLocation : '/usr/local/bin/docker-compose'
 )
-@Library('ssh_deploy') _
 
 node {
   checkout scm
-  sshDeploy('dev/deploy.yml');
+  sshDeploy('deploy.yml');
 }
