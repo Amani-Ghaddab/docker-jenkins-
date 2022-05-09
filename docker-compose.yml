@@ -18,9 +18,10 @@ services:
     
   #nginx server 
   reversproxy:
-    build:
-      context : ./nginx/
-      dockerfile : dockerfile
+    image: nginx:alpine
+   # build:
+    #  context : ./nginx/
+   #   dockerfile : dockerfile
     volumes:
       - ./:/var/www
       - "./nginx.conf:/etc/nginx/nginx.conf:ro" #ro:read only
