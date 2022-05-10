@@ -5,7 +5,6 @@ gitCheckout(
 )
 dockerComposeUp(
   dockerComposLocation : '/usr/local/bin/docker-compose'
-   echo "don"
 )
 
 /*node {
