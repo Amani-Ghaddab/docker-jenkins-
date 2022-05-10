@@ -6,7 +6,7 @@ gitCheckout(
 dockerComposeUp(
   dockerComposLocation : '/usr/local/bin/docker-compose'
 )
-///// thos os ssiojv
+
 /*node {
   checkout scm
   sshDeploy('dev/deploy.yml');
