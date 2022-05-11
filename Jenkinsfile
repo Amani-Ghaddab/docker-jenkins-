@@ -7,7 +7,8 @@ dockerComposeUp(
   dockerComposLocation : '/usr/local/bin/docker-compose'
 )
 
-/*node {
-  checkout scm
-  sshDeploy('dev/deploy.yml');
-}*/
+node {
+  echo "it works "
+//  checkout scm
+  //sshDeploy('dev/deploy.yml');
+}
